@@ -36,7 +36,7 @@ allprojects {
     // Matches Maven's "project.groupId". Used in MANIFEST.MF for "Implementation-Vendor-Id".
     group = "edu.ucar"
     // Matches Maven's "project.version". Used in MANIFEST.MF for "Implementation-Version".
-    version = '5.0.0-SNAPSHOT'
+    version = 'feature-s3+hdfs-bbd7f24'
     // Eventually, we'll stop appending "SNAPSHOT" to our versions and just use this.
     status = 'development'
 }
@@ -64,15 +64,15 @@ ext {
 
     SimpleDateFormat iso_8601_format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
     buildTimestamp = iso_8601_format.format(new Date())
-    
+
     // Project groups
     javaProjects = subprojects.findAll { it.plugins.withType(JavaPlugin) }
-    
+
     internalProjects = subprojects.findAll { it.path in [
             ':dap4', ':dap4:d4tests', ':dap4:d4ts', ':opendap:dtswar',
             ':docs', ':it', ':cdm-test', ':testUtil'
     ] }
-    
+
     publishedProjects = subprojects - internalProjects
 }
 
