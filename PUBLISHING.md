@@ -9,12 +9,12 @@ Then publish:
 ```bash
 aws --profile geotrellis s3 cp \
   ./cdm/build/libs/cdm-feature-s3+hdfs-<hash>.jar \
-  s3://geotrellis-thredds-build-artifacts/ \
+  s3://geotrellis-build-artifacts/thredds \
   --acl public-read
 ```
 
 To use this project in SBT, add the following line to your library dependencies:
 
 ```
-"edu.ucar" % "cdm" % "feature-s3+hdfs-<hash>" from "https://geotrellis-thredds-build-artifacts.s3.amazonaws.com/cdm-feature-s3%2Bhdfs-<hash>.jar"
+"edu.ucar" % "cdm" % "feature-s3+hdfs-<hash>" from "https://geotrellis-build-artifacts.s3.amazonaws.com/thredds/cdm-feature-s3%2Bhdfs-<hash>.jar"
 ```
